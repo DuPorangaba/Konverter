@@ -6,37 +6,70 @@
         <title>Konvert</title>
         <link rel="icon" href="/public/images/icon.svg">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Roboto&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="/public/css/main.css">
     </head>
     <body>
         <div id="container">
             <header>
                 <img src="/public/images/logo.svg" alt="logo do konvert">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Moedas</a></li>
-                        <li><a href="#">Temperatura</a></li>
-                        <li><a href="#">Distância</a></li>
-                    </ul>
-                </nav>
-                <hr>
+                <div class="tab-links">
+                   <button data-id="Home" data-default>Home</button>
+                   <button data-id="currency" >Moedas</button>
+                   <button data-id="tempeture" >Temperatura</button>
+                   <button data-id="distance" >Distância</button>
+                </div>
+                
             </header>
-            <div id="contents">
-                <section> 
-                    <img src="/public/images/calculator.svg" alt="Calculadora">
-                    <h1>Converta seus problemas em soluções.</h1>
-                    <p>Simples. Fácil. Rápido.</p>
-                </section>
 
-                <section>
+            <hr>
 
-                </section>
-            </div>
+            <main>
+
+                <div class="tab-content">
+                    <section id="home"> 
+                        <img src="/public/images/calculator.svg" alt="Calculadora">
+                        <h1>Converta seus problemas em soluções.</h1>
+                        <p>Simples. Fácil. Rápido.</p>
+                    </section>
+    
+                    <section id="currency">
+                        <div class="conversor">
+                            <p class=tittle>Conversor de Moedas</p>
+                            <p class=caption>Veja quanto vale o real em diversas moedas!</p>
+                            <div id="moneyOptions">
+                              <select id="fCurrency" class="selectMoney" onchange="updateSecondCurrency()">
+                                <option value="">Selecione a moeda</option>
+                                <option value="BRL">Real (BRL)</option>
+                                <option value="USD">Dólar (USD)</option>
+                                <option value="EUR">Euro (EUR)</option>
+                                <option value="BTC">Bitcoin (BTC)</option>
+                              </select>
+                              <select id="sCurrency" class="selectMoney" disabled></select>
+                            </div>
+                            <div id="real">
+                              <label for="moneyValue"></label>
+                              <input type="number" id="moneyValue"/>
+                              <button type="submit" onclick="convert()">Converter</button>
+                            </div>
+                            <div id="convertedValue"></div>
+                        </div>
+                    </section>
+    
+                    <section id="tempeture">
+                        <div class="conversor">
+                        </div>
+                    </section>
+    
+                    <section id="distance">
+                        <div class="conversor">
+                        </div>
+                    </section>
+                </div>
+
+            </main>
+            
         </div>
     </body>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/currency.js"></script>
 </html>

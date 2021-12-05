@@ -1,0 +1,94 @@
+@import url(https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Roboto&display=swap);
+
+:root{
+ --black: #040404;
+ --white: #FFFFFF;
+ --pink: #CD074E;
+ --light-grey:#E7E7E7;
+ --gray:#686868;
+ --dark-gray:#717171;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* max-width: 100%;
+    overflow-x: hidden; */
+    height: 100vh;
+
+    background-color:var(--black);
+    color: var(--white);
+    font-family: 'Quicksand', sans-serif;
+}
+
+header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+header img{
+    height: 60px;
+}
+
+button{
+    color: var(--white);
+
+    border: none;
+    background: transparent;
+
+    font-size: 15px;
+
+    padding: 5px;
+    margin-right: 5px;
+
+    outline: none;
+
+    position: relative;
+}
+
+/* Adicionando um pseudo-elemento dps do button, isso é aquela barrinha tipo hover */
+button::after{
+    position: absolute;
+    bottom:0;
+    left:0;
+
+    content:"";
+    height: 2px;
+    width: 0%;
+
+    background-color: var(--pink);
+
+    transition: .4s;
+}
+
+button:hover::after,
+button.active::after{
+    width: 100%;
+}
+
+.tab-content>section {
+    animation: up 1s;
+}
+
+    @keyframes up {
+        from{
+            opacity:0;
+            transform: translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+main{
+    margin: 0 auto;
+    max-width:320px;
+}
+
